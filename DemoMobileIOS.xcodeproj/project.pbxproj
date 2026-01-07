@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F85EE2762EA8E4F400155D8D /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = F85EE2752EA8E4F400155D8D /* SdkMobileIOSNative */; };
-		F85EE2782EA8E4F800155D8D /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = F85EE2772EA8E4F800155D8D /* SdkMobileIOSNative */; };
-		F85EE27A2EA8E4FC00155D8D /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = F85EE2792EA8E4FC00155D8D /* SdkMobileIOSNative */; };
-		F85EE27C2EA8E50100155D8D /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = F85EE27B2EA8E50100155D8D /* SdkMobileIOSNative */; };
+		C21380972F0D642300BB7985 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C21380962F0D642300BB7985 /* SdkMobileIOSNative */; };
+		C21380992F0E537800BB7985 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C21380982F0E537800BB7985 /* SdkMobileIOSNative */; };
+		C21382842F0E9BDB00BB7985 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C21382832F0E9BDB00BB7985 /* SdkMobileIOSNative */; };
+		C21382862F0E9BED00BB7985 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C21382852F0E9BED00BB7985 /* SdkMobileIOSNative */; };
+		C27D21D82EEC298000FF0C0D /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C27D21D72EEC298000FF0C0D /* SdkMobileIOSNative */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85EE27A2EA8E4FC00155D8D /* SdkMobileIOSNative in Frameworks */,
+				C21382862F0E9BED00BB7985 /* SdkMobileIOSNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85EE2762EA8E4F400155D8D /* SdkMobileIOSNative in Frameworks */,
+				C21382842F0E9BDB00BB7985 /* SdkMobileIOSNative in Frameworks */,
+				C27D21D82EEC298000FF0C0D /* SdkMobileIOSNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85EE2782EA8E4F800155D8D /* SdkMobileIOSNative in Frameworks */,
+				C21380992F0E537800BB7985 /* SdkMobileIOSNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85EE27C2EA8E50100155D8D /* SdkMobileIOSNative in Frameworks */,
+				C21380972F0D642300BB7985 /* SdkMobileIOSNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +125,7 @@
 			);
 			name = HeadlessUIKitDemo;
 			packageProductDependencies = (
-				F85EE2792EA8E4FC00155D8D /* SdkMobileIOSNative */,
+				C21382852F0E9BED00BB7985 /* SdkMobileIOSNative */,
 			);
 			productName = HeadlessUIKitDemo;
 			productReference = F863E70D2EA376D00078FAFD /* HeadlessUIKitDemo.app */;
@@ -146,7 +148,8 @@
 			);
 			name = SimpleDemo;
 			packageProductDependencies = (
-				F85EE2752EA8E4F400155D8D /* SdkMobileIOSNative */,
+				C27D21D72EEC298000FF0C0D /* SdkMobileIOSNative */,
+				C21382832F0E9BDB00BB7985 /* SdkMobileIOSNative */,
 			);
 			productName = SimpleDemo;
 			productReference = F88321E32E0300DC0078853C /* SimpleDemo.app */;
@@ -169,7 +172,7 @@
 			);
 			name = CustomizedDemo;
 			packageProductDependencies = (
-				F85EE2772EA8E4F800155D8D /* SdkMobileIOSNative */,
+				C21380982F0E537800BB7985 /* SdkMobileIOSNative */,
 			);
 			productName = CustomizedDemo;
 			productReference = F883231A2E03E2B00078853C /* CustomizedDemo.app */;
@@ -192,7 +195,7 @@
 			);
 			name = HeadlessDemo;
 			packageProductDependencies = (
-				F85EE27B2EA8E50100155D8D /* SdkMobileIOSNative */,
+				C21380962F0D642300BB7985 /* SdkMobileIOSNative */,
 			);
 			productName = HeadlessDemo;
 			productReference = F8C78CE62EA76D1D00D1198A /* HeadlessDemo.app */;
@@ -234,7 +237,7 @@
 			);
 			mainGroup = D8B899FE2C29B4960020B061;
 			packageReferences = (
-				F85EE2742EA8E4EC00155D8D /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */,
+				C21380952F0D640200BB7985 /* XCLocalSwiftPackageReference "../sdk-mobile-ios-native" */,
 			);
 			productRefGroup = D8B89A082C29B4960020B061 /* Products */;
 			projectDirPath = "";
@@ -515,7 +518,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,8 +527,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = strivacity.SimpleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -545,7 +552,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,8 +561,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = strivacity.SimpleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -635,7 +646,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -669,7 +680,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,36 +749,34 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		F85EE2742EA8E4EC00155D8D /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://www.github.com/Strivacity/sdk-mobile-ios-native";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		C21380952F0D640200BB7985 /* XCLocalSwiftPackageReference "../sdk-mobile-ios-native" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../sdk-mobile-ios-native";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F85EE2752EA8E4F400155D8D /* SdkMobileIOSNative */ = {
+		C21380962F0D642300BB7985 /* SdkMobileIOSNative */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F85EE2742EA8E4EC00155D8D /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */;
+			package = C21380952F0D640200BB7985 /* XCLocalSwiftPackageReference "../sdk-mobile-ios-native" */;
 			productName = SdkMobileIOSNative;
 		};
-		F85EE2772EA8E4F800155D8D /* SdkMobileIOSNative */ = {
+		C21380982F0E537800BB7985 /* SdkMobileIOSNative */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F85EE2742EA8E4EC00155D8D /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */;
+			package = C21380952F0D640200BB7985 /* XCLocalSwiftPackageReference "../sdk-mobile-ios-native" */;
 			productName = SdkMobileIOSNative;
 		};
-		F85EE2792EA8E4FC00155D8D /* SdkMobileIOSNative */ = {
+		C21382832F0E9BDB00BB7985 /* SdkMobileIOSNative */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F85EE2742EA8E4EC00155D8D /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */;
 			productName = SdkMobileIOSNative;
 		};
-		F85EE27B2EA8E50100155D8D /* SdkMobileIOSNative */ = {
+		C21382852F0E9BED00BB7985 /* SdkMobileIOSNative */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F85EE2742EA8E4EC00155D8D /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */;
+			productName = SdkMobileIOSNative;
+		};
+		C27D21D72EEC298000FF0C0D /* SdkMobileIOSNative */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = SdkMobileIOSNative;
 		};
 /* End XCSwiftPackageProductDependency section */

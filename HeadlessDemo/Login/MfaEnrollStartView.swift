@@ -21,8 +21,7 @@ struct MfaEnrollStartView: View {
         VStack {
             Text("Enroll the following authentication methods")
                 .multilineTextAlignment(.center)
-                .font(.title)
-                .bold()
+                .font(.title.bold())
 
             HStack {
                 Text(identifier)

@@ -8,6 +8,8 @@ struct Login: View {
     @EnvironmentObject var scrollManager: ScrollManager
     @EnvironmentObject var focusManager: FocusManager
 
+    @State private var audiences: String = ""
+
     public var body: some View {
         ScrollViewReader { proxy in
             GeometryReader { geometry in
@@ -15,7 +17,9 @@ struct Login: View {
                     VStack {
                         if let profile = session.profile {
                             Text("Authenticated: ")
-                            Text(profile.claims["given_name"] as? String ?? "N/A")
+                            Text(
+                                profile.claims["given_name"] as? String ?? "N/A"
+                            )
                             Button("Revoke") {
                                 Task {
                                     try await nativeSDK.revoke()
@@ -27,26 +31,48 @@ struct Login: View {
                                 }
                             }
                         } else if session.loginInProgress {
-                            LoginView(nativeSDK: nativeSDK) { _, screen, forms, layout in
-                                WidgetHandler(screen: screen, forms: forms, layout: layout)
+                            LoginView(nativeSDK: nativeSDK) {
+                                _,
+                                screen,
+                                forms,
+                                layout in
+                                WidgetHandler(
+                                    screen: screen,
+                                    forms: forms,
+                                    layout: layout
+                                )
                             }.padding()
                                 .disabled(focusManager.isFocusDisabled)
                         } else {
+
+                            CustomAudienceInput(audiences: $audiences)
+
                             Button("Login") {
                                 Task {
                                     self.error = nil
                                     await nativeSDK.login(
-                                        parameters: nil, onSuccess: {}, onError: { err in
+                                        parameters: LoginParameters(
+                                            audiences: audiences.split(
+                                                separator: " ",
+                                                omittingEmptySubsequences: true
+                                            ).map(String.init)
+                                        ),
+                                        onSuccess: {},
+                                        onError: { err in
                                             switch err {
-                                            case let NativeSDKError.oidcError(
+                                            case NativeSDKError.oidcError(
                                                 error: _,
-                                                errorDescription: errorDescription
+                                                errorDescription: let
+                                                    errorDescription
                                             ):
                                                 self.error = errorDescription
-                                            case NativeSDKError.hostedFlowCanceled:
-                                                self.error = "Hosted flow was cancelled"
+                                            case NativeSDKError
+                                                .hostedFlowCanceled:
+                                                self.error =
+                                                    "Hosted flow was cancelled"
                                             case NativeSDKError.sessionExpired:
-                                                self.error = "Login session expired"
+                                                self.error =
+                                                    "Login session expired"
                                             default:
                                                 self.error = "N/A"
                                             }
@@ -59,7 +85,7 @@ struct Login: View {
                                     .foregroundColor(Colors.red)
                             }
                         }
-                    } // center the scrollview content vertically
+                    }  // center the scrollview content vertically
                     .frame(width: geometry.size.width)
                     .frame(minHeight: geometry.size.height)
                 }
@@ -82,4 +108,43 @@ struct Login: View {
             }
         }
     }
+}
+
+private struct CustomAudienceInput: View {
+    
+    @Binding var audiences: String
+    
+    public var body: some View {
+        
+        VStack(alignment: .leading) {
+            HStack {
+                TextField("Custom Audiences", text: $audiences)
+                    .textFieldStyle(.roundedBorder)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                
+                Button(action: {
+                    if let url = URL(string: CustomAudienceInput.documentationUrl) {
+                        UIApplication.shared.open(url)
+                    }
+                }) {
+                    Image(systemName: "info.circle")
+                        .foregroundStyle(.secondary)
+                }
+            }
+            
+            Text("Audiences separated by space")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(8)
+    }
+    
+    static private let documentationUrl : String = "https://docs.strivacity.com/docs/oauth2-oidc-properties-setup#allowed-custom-audiences"
+}
+
+#Preview {
+    @State @Previewable var audiences: String = ""
+    CustomAudienceInput(audiences: $audiences)
 }
