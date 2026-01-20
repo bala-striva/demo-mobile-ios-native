@@ -49,7 +49,7 @@ struct ProfileView: View {
                 do {
                     try await nativeSDK.logout()
                 } catch is CancellationError {
-                    fatalError("Logout cancelled before completion")
+                    NSLog("Logout cancelled before completion")
                 } catch {
                     print("\(error)")
                 }

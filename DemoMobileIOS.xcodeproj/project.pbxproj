@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C21380972F0D642300BB7985 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C21380962F0D642300BB7985 /* SdkMobileIOSNative */; };
-		C21380992F0E537800BB7985 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C21380982F0E537800BB7985 /* SdkMobileIOSNative */; };
-		C21382842F0E9BDB00BB7985 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C21382832F0E9BDB00BB7985 /* SdkMobileIOSNative */; };
-		C21382862F0E9BED00BB7985 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C21382852F0E9BED00BB7985 /* SdkMobileIOSNative */; };
-		C27D21D82EEC298000FF0C0D /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C27D21D72EEC298000FF0C0D /* SdkMobileIOSNative */; };
+		C2589E5A2F1F862B0077DA35 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C2589E592F1F862B0077DA35 /* SdkMobileIOSNative */; };
+		C2589E5C2F1F863C0077DA35 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C2589E5B2F1F863C0077DA35 /* SdkMobileIOSNative */; };
+		C2589E5E2F1F86420077DA35 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C2589E5D2F1F86420077DA35 /* SdkMobileIOSNative */; };
+		C2589E602F1F86530077DA35 /* SdkMobileIOSNative in Frameworks */ = {isa = PBXBuildFile; productRef = C2589E5F2F1F86530077DA35 /* SdkMobileIOSNative */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21382862F0E9BED00BB7985 /* SdkMobileIOSNative in Frameworks */,
+				C2589E5C2F1F863C0077DA35 /* SdkMobileIOSNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21382842F0E9BDB00BB7985 /* SdkMobileIOSNative in Frameworks */,
-				C27D21D82EEC298000FF0C0D /* SdkMobileIOSNative in Frameworks */,
+				C2589E602F1F86530077DA35 /* SdkMobileIOSNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21380992F0E537800BB7985 /* SdkMobileIOSNative in Frameworks */,
+				C2589E5A2F1F862B0077DA35 /* SdkMobileIOSNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21380972F0D642300BB7985 /* SdkMobileIOSNative in Frameworks */,
+				C2589E5E2F1F86420077DA35 /* SdkMobileIOSNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +123,7 @@
 			);
 			name = HeadlessUIKitDemo;
 			packageProductDependencies = (
-				C21382852F0E9BED00BB7985 /* SdkMobileIOSNative */,
+				C2589E5B2F1F863C0077DA35 /* SdkMobileIOSNative */,
 			);
 			productName = HeadlessUIKitDemo;
 			productReference = F863E70D2EA376D00078FAFD /* HeadlessUIKitDemo.app */;
@@ -148,8 +146,7 @@
 			);
 			name = SimpleDemo;
 			packageProductDependencies = (
-				C27D21D72EEC298000FF0C0D /* SdkMobileIOSNative */,
-				C21382832F0E9BDB00BB7985 /* SdkMobileIOSNative */,
+				C2589E5F2F1F86530077DA35 /* SdkMobileIOSNative */,
 			);
 			productName = SimpleDemo;
 			productReference = F88321E32E0300DC0078853C /* SimpleDemo.app */;
@@ -172,7 +169,7 @@
 			);
 			name = CustomizedDemo;
 			packageProductDependencies = (
-				C21380982F0E537800BB7985 /* SdkMobileIOSNative */,
+				C2589E592F1F862B0077DA35 /* SdkMobileIOSNative */,
 			);
 			productName = CustomizedDemo;
 			productReference = F883231A2E03E2B00078853C /* CustomizedDemo.app */;
@@ -195,7 +192,7 @@
 			);
 			name = HeadlessDemo;
 			packageProductDependencies = (
-				C21380962F0D642300BB7985 /* SdkMobileIOSNative */,
+				C2589E5D2F1F86420077DA35 /* SdkMobileIOSNative */,
 			);
 			productName = HeadlessDemo;
 			productReference = F8C78CE62EA76D1D00D1198A /* HeadlessDemo.app */;
@@ -237,7 +234,7 @@
 			);
 			mainGroup = D8B899FE2C29B4960020B061;
 			packageReferences = (
-				C21380952F0D640200BB7985 /* XCLocalSwiftPackageReference "../sdk-mobile-ios-native" */,
+				C2589E562F1F860F0077DA35 /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */,
 			);
 			productRefGroup = D8B89A082C29B4960020B061 /* Products */;
 			projectDirPath = "";
@@ -749,34 +746,36 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		C21380952F0D640200BB7985 /* XCLocalSwiftPackageReference "../sdk-mobile-ios-native" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../sdk-mobile-ios-native";
+/* Begin XCRemoteSwiftPackageReference section */
+		C2589E562F1F860F0077DA35 /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Strivacity/sdk-mobile-ios-native";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C21380962F0D642300BB7985 /* SdkMobileIOSNative */ = {
+		C2589E592F1F862B0077DA35 /* SdkMobileIOSNative */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C21380952F0D640200BB7985 /* XCLocalSwiftPackageReference "../sdk-mobile-ios-native" */;
+			package = C2589E562F1F860F0077DA35 /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */;
 			productName = SdkMobileIOSNative;
 		};
-		C21380982F0E537800BB7985 /* SdkMobileIOSNative */ = {
+		C2589E5B2F1F863C0077DA35 /* SdkMobileIOSNative */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C21380952F0D640200BB7985 /* XCLocalSwiftPackageReference "../sdk-mobile-ios-native" */;
+			package = C2589E562F1F860F0077DA35 /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */;
 			productName = SdkMobileIOSNative;
 		};
-		C21382832F0E9BDB00BB7985 /* SdkMobileIOSNative */ = {
+		C2589E5D2F1F86420077DA35 /* SdkMobileIOSNative */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = C2589E562F1F860F0077DA35 /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */;
 			productName = SdkMobileIOSNative;
 		};
-		C21382852F0E9BED00BB7985 /* SdkMobileIOSNative */ = {
+		C2589E5F2F1F86530077DA35 /* SdkMobileIOSNative */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SdkMobileIOSNative;
-		};
-		C27D21D72EEC298000FF0C0D /* SdkMobileIOSNative */ = {
-			isa = XCSwiftPackageProductDependency;
+			package = C2589E562F1F860F0077DA35 /* XCRemoteSwiftPackageReference "sdk-mobile-ios-native" */;
 			productName = SdkMobileIOSNative;
 		};
 /* End XCSwiftPackageProductDependency section */
