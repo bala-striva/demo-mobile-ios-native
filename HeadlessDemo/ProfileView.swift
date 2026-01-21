@@ -46,7 +46,13 @@ struct ProfileView: View {
         
         Button("Logout") {
             Task {
-                try await nativeSDK.logout()
+                do {
+                    try await nativeSDK.logout()
+                } catch is CancellationError {
+                    NSLog("Logout cancelled before completion")
+                } catch {
+                    print("\(error)")
+                }
             }
         }
         .tint(.primaryAction)

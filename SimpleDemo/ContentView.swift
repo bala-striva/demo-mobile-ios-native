@@ -75,8 +75,10 @@ struct ContentView: View {
                                     prefersEphemeralWebBrowserSession: true
                                 ),
                                 onSuccess: {
+                                    print("Login successulf")
                                 },
                                 onError: { err in
+                                    print("Login failed: \(err.localizedDescription)")
                                     switch err {
                                     case let NativeSDKError.oidcError(error: _, errorDescription: errorDescription):
                                         self.error = errorDescription
