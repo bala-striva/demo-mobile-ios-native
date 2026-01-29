@@ -9,6 +9,8 @@ struct ContentView: View {
     @ObservedObject var session: Session
     @State var error: String?
     @State var accessToken: String?
+    
+    @State var entryUrl: URL?
 
     init() {
         nativeSDK = NativeSDK(
@@ -47,7 +49,7 @@ struct ContentView: View {
                             self.error = nil
 
                             do {
-                                let profile = try await nativeSDK.login(
+                                let _ = try await nativeSDK.login(
                                     parameters: LoginParameters(
                                         acrValue: "hu",
                                         scopes: ["openid", "profile", "email", "offline"],
@@ -82,6 +84,17 @@ struct ContentView: View {
                 try await nativeSDK.initializeSession()
                 loading = false
             }
+        }
+        .task(id: entryUrl) {
+            guard let entryUrl = entryUrl else { return }
+            do {
+                try await nativeSDK.entry(entryUrl: entryUrl)
+            } catch {
+                self.error = error.localizedDescription
+            }
+        }
+        .onOpenURL { url in
+            entryUrl = url
         }
     }
 }
