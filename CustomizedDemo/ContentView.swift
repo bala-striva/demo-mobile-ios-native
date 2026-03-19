@@ -31,7 +31,7 @@ struct ContentView: View {
                 Text("Strivacity")
                     .padding(.top, 24)
 
-                Login(nativeSDK: nativeSDK, error: error)
+                Login(nativeSDK: nativeSDK, error: $error)
                     .environmentObject(session)
                     .environmentObject(scrollManager)
                     .environmentObject(focusManager)
@@ -66,6 +66,7 @@ struct ContentView: View {
                 // entry can also be manually cancelled by invoking `NativeSDK.cancelFlow()`
                 print("Entry was replaced or view went out of scope - this is normal")
             } catch {
+                print("Entry threw an error - \(error.localizedDescription)")
                 self.error = error.localizedDescription
             }
         }

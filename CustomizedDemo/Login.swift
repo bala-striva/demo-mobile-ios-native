@@ -4,7 +4,7 @@ import SwiftUI
 struct Login: View {
     var nativeSDK: NativeSDK
     
-    @State var error: String?
+    @Binding var error: String?
     
     @EnvironmentObject var session: Session
     @EnvironmentObject var scrollManager: ScrollManager
