@@ -3,19 +3,35 @@ import SwiftUI
 
 struct Login: View {
     var nativeSDK: NativeSDK
-    @State var error: String?
+    
+    @Binding var error: String?
+    
     @EnvironmentObject var session: Session
     @EnvironmentObject var scrollManager: ScrollManager
     @EnvironmentObject var focusManager: FocusManager
 
     @State private var audiences: String = ""
+    
 
     public var body: some View {
         ScrollViewReader { proxy in
             GeometryReader { geometry in
                 ScrollView(.vertical) {
                     VStack {
-                        if let profile = session.profile {
+                        if session.loginInProgress {
+                            LoginView(nativeSDK: nativeSDK) {
+                                _,
+                                screen,
+                                forms,
+                                layout in
+                                WidgetHandler(
+                                    screen: screen,
+                                    forms: forms,
+                                    layout: layout
+                                )
+                            }.padding()
+                                .disabled(focusManager.isFocusDisabled)
+                        } else if let profile = session.profile {
                             Text("Authenticated: ")
                             Text(
                                 profile.claims["given_name"] as? String ?? "N/A"
@@ -30,19 +46,6 @@ struct Login: View {
                                     try await nativeSDK.logout()
                                 }
                             }
-                        } else if session.loginInProgress {
-                            LoginView(nativeSDK: nativeSDK) {
-                                _,
-                                screen,
-                                forms,
-                                layout in
-                                WidgetHandler(
-                                    screen: screen,
-                                    forms: forms,
-                                    layout: layout
-                                )
-                            }.padding()
-                                .disabled(focusManager.isFocusDisabled)
                         } else {
 
                             CustomAudienceInput(audiences: $audiences)

@@ -45,6 +45,8 @@ struct LoginScreen: View {
                     MfaEnrollChallengeView()
                 case "genericResult":
                     GenericResultView()
+                case "passwordReset":
+                    PasswordResetView()
                 default:
                     Text("Unkown screen: \(loginScreenModel.screen?.screen ?? "N/A")")
                     .onAppear {
