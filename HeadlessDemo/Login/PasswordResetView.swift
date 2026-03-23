@@ -10,7 +10,7 @@ struct PasswordResetView: View {
 
             Button("Close") {
                 Task {
-                    await try loginScreenModel.headlessAdapter.closeEntryFlow()
+                    await try loginScreenModel.headlessAdapter.closeFlow()
                 }
             }
 
