@@ -32,6 +32,14 @@ struct WidgetHandler: View {
                     MultiSelectView(formId: formId, widgetId: widgetId, widget: multiSelectWidget, fieldId: fieldId)
                 } else if case let .date(dateWidget) = widget {
                     DateView(formId: formId, widgetId: widgetId, widget: dateWidget, fieldId: fieldId)
+                } else if case let .passkeyLogin(widget) = widget {
+                    PasskeyLoginView(formId: formId, widgetId: widgetId, widget: widget)
+                } else if case let .passkeyEnroll(widget) = widget {
+                    PasskeyEnrollView(formId: formId, widgetId: widgetId, widget: widget)
+                } else if case let .webauthnLogin(widget) = widget {
+                    WebauthnLoginView(formId: formId, widgetId: widgetId, widget: widget)
+                } else if case let .webauthnEnroll(widget) = widget {
+                    WebauthnEnrollView(formId: formId, widgetId: widgetId, widget: widget)
                 } else {
                     LoginWidgetView(screen: screen, formId: formId, widgetId: widgetId, widget: widget)
                 }
