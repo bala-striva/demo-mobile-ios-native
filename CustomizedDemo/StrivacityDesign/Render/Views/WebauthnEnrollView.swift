@@ -8,6 +8,7 @@ struct WebauthnEnrollView: View {
 
     @State var handler = WebauthnHandler()
     @State var errorMessage: String?
+    @State var running = false
 
     let formId: String
     let widgetId: String
@@ -17,16 +18,17 @@ struct WebauthnEnrollView: View {
     var body: some View {
         VStack {
             let button = Button {
-                Task {
-                    scrollManager.errorFieldIds.removeAll()
-                    handler.enroll(enrollOptions: widget.enrollOptions) { result in
-                        loginController.setWidgetData(formId: formId, widgetId: widgetId, value: result)
-                        await loginController.submit(formId: formId)
-                    } onError: { err in
-                        errorMessage = err?.localizedDescription
-                    }
-                    focusManager.clearFocus()
+                running = true
+                scrollManager.errorFieldIds.removeAll()
+                handler.enroll(enrollOptions: widget.enrollOptions) { result in
+                    loginController.setWidgetData(formId: formId, widgetId: widgetId, value: result)
+                    await loginController.submit(formId: formId)
+                    running = false
+                } onError: { err in
+                    errorMessage = err?.localizedDescription
+                    running = false
                 }
+                focusManager.clearFocus()
 
             } label: { Text(widget.label)
                 // this frame modifier is needed so that the whole button can be clickable
@@ -58,5 +60,6 @@ struct WebauthnEnrollView: View {
 
             ErrorView(formId: formId, widgetId: widgetId, error: errorMessage ?? "")
         }
+        .disabled(running)
     }
 }

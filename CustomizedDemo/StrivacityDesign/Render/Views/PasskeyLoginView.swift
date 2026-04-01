@@ -8,6 +8,7 @@ struct PasskeyLoginView: View {
 
     @State var handler = WebauthnHandler()
     @State var errorMessage: String?
+    @State var running = false
 
     @State var autofillHandler = WebauthnHandler()
 
@@ -19,21 +20,22 @@ struct PasskeyLoginView: View {
     var body: some View {
         VStack {
             let button = Button {
-                Task {
-                    if #available(iOS 16.0, *) {
-                        autofillHandler.close()
-                    }
-
-                    scrollManager.errorFieldIds.removeAll()
-                    handler.authenticate(assertionOptions: widget.assertionOptions) { result in
-                        loginController.setWidgetData(formId: formId, widgetId: widgetId, value: result)
-                        await loginController.submit(formId: formId)
-                    } onError: { err in
-                        errorMessage = err?.localizedDescription
-                        autofill()
-                    }
-                    focusManager.clearFocus()
+                running = true
+                if #available(iOS 16.0, *) {
+                    autofillHandler.close()
                 }
+
+                scrollManager.errorFieldIds.removeAll()
+                handler.authenticate(assertionOptions: widget.assertionOptions) { result in
+                    loginController.setWidgetData(formId: formId, widgetId: widgetId, value: result)
+                    await loginController.submit(formId: formId)
+                    running = false
+                } onError: { err in
+                    errorMessage = err?.localizedDescription
+                    autofill()
+                    running = false
+                }
+                focusManager.clearFocus()
 
             } label: { Text(widget.label)
                 // this frame modifier is needed so that the whole button can be clickable
@@ -65,6 +67,7 @@ struct PasskeyLoginView: View {
 
             ErrorView(formId: formId, widgetId: widgetId, error: errorMessage ?? "")
         }
+        .disabled(running)
         .onAppear {
             autofill()
         }
