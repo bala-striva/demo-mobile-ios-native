@@ -1,13 +1,13 @@
 {
-  "originHash" : "46dfb36e3270e9c287b4ae3c7275d281b975bb5e1f8574cb1956b93ab7b6ec00",
+  "originHash" : "1d84ee79c098d12fabbc80b30150f42aa5fce1751a3938a920e0dabe7e770427",
   "pins" : [
     {
       "identity" : "sdk-mobile-ios-native",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Strivacity/sdk-mobile-ios-native",
+      "location" : "https://www.github.com/Strivacity/sdk-mobile-ios-native",
       "state" : {
         "branch" : "main",
-        "revision" : "9c102f2ddc9c5eaa2cc91b7e467a91e79d49dc43"
+        "revision" : "7a291479557d5fc587b0c02e4e920d03955aa674"
       }
     }
   ],
